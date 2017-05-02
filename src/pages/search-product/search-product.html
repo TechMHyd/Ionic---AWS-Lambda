@@ -1,0 +1,24 @@
+<ion-header>
+
+    <ion-navbar color="info">
+        <button color="info" (click)="toggleMenu()" ion-button style="float: right">
+        <ion-icon name="menu"></ion-icon></button>
+        <ion-title center text-center>Search</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <h2 padding>Search for the Existing Product</h2>
+    <ion-row>
+        <ion-col width-80>
+            <ion-item>
+                <ion-label color="info">Product ID</ion-label>
+                <ion-input type="text" value="" [(ngModel)]="search.productId" required></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col width-20>
+            <button padding center text-center ion-button color="info"><ion-icon name="search"></ion-icon></button>
+        </ion-col>
+    </ion-row>
+</ion-content>

@@ -1,0 +1,2 @@
+sudo npm i -g typescript@next
+npm i --save @types/aws-sdk

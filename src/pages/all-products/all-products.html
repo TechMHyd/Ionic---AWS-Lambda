@@ -9,6 +9,15 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+    <ion-row *ngIf="allProducts[0].productName.s">
+        <ion-card *ngFor="let product of allProducts">
+            <h1 center text-center>{{product.productName.s}}</h1>
+            <h2>Model: {{product.productModel.s}}</h2>
+            <h2>Category: {{product.Category.s}}</h2>
+            <h2>Price: {{product.Price.n}}</h2>
+            <h2>Quantity: {{product.Quantity.n}}</h2>
 
+        </ion-card>
+    </ion-row>
 </ion-content>

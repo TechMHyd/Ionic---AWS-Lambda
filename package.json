@@ -20,7 +20,9 @@
     "@angular/platform-browser": "2.4.8",
     "@angular/platform-browser-dynamic": "2.4.8",
     "@angular/platform-server": "2.4.8",
+    "@ionic-native/in-app-browser": "^3.6.1",
     "@ionic/storage": "2.0.0",
+    "@types/aws-sdk": "^2.7.0",
     "amazon-cognito-identity-js": "^1.16.0",
     "ionic-angular": "2.2.0",
     "ionic-native": "2.8.1",
@@ -31,6 +33,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "1.1.4",
+    "@types/node": "^7.0.16",
     "typescript": "2.0.9"
   },
   "cordovaPlugins": [

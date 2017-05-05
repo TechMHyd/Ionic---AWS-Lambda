@@ -11,15 +11,14 @@
                 <ion-avatar item-left>
                     <img src="">
                 </ion-avatar>
-                <h2>Agni</h2>
-                <p>Agni@techm</p>
+                <h2>{{username}}</h2>
+                <p>Role: {{userRole}}</p>
             </ion-list-header>
             <button menuClose ion-item (click)="goToHome()"><ion-icon name="home"></ion-icon>Home</button>
-            <button menuClose ion-item (click)="goToAll()"><ion-icon name="document"></ion-icon>Show All</button>
+            <button menuClose ion-item *ngIf="userRole == 'admin'" (click)="goToAll()"><ion-icon name="document"></ion-icon>Show All</button>
             <button menuClose ion-item (click)="goToAddNew()"><ion-icon name="add"></ion-icon>Add New</button>
-            <button menuClose ion-item (click)="goToUpdate()"><ion-icon name="call"></ion-icon>Update</button>
             <button menuClose ion-item (click)="goToSearch()"><ion-icon name="search"></ion-icon>Search</button>
-            <button menuClose ion-item (click)="goToDelete()"><ion-icon name="trash"></ion-icon>Delete</button>
+            <button menuClose ion-item *ngIf="userRole == 'admin'" (click)="goToDelete()"><ion-icon name="trash"></ion-icon>Delete</button>
             <button menuClose ion-item (click)="logOut()"><ion-icon name="exit"></ion-icon>Logout</button>
         </ion-list>
     </ion-content>

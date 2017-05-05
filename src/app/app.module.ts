@@ -7,8 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http'
 
 import { MyApp } from './app.component';
-import { LoginPage,RegisterPage,AppHomePage,AllProductsPage,DeleteProductPage,SaveNewProductPage,SearchProductPage,UpdateProductPage } from '../pages/pages.export';
-import { RegisterService } from '../shared/shared-pages.export';
+import { LoginPage,RegisterPage,AppHomePage,AllProductsPage,DeleteProductPage,SaveNewProductPage,SearchProductPage } from '../pages/pages.export';
+import { AllProductsService,DeleteProductsService,SearchService,InsertNewService } from '../shared/shared-pages.export';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,7 @@ import { RegisterService } from '../shared/shared-pages.export';
     AllProductsPage,
     DeleteProductPage,
     SaveNewProductPage,
-    SearchProductPage,
-    UpdateProductPage
+    SearchProductPage
   ],
   imports: [
     BrowserModule,
@@ -36,13 +35,15 @@ import { RegisterService } from '../shared/shared-pages.export';
     AllProductsPage,
     DeleteProductPage,
     SaveNewProductPage,
-    SearchProductPage,
-    UpdateProductPage
+    SearchProductPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    RegisterService,
+    AllProductsService,
+    DeleteProductsService,
+    SearchService,
+    InsertNewService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

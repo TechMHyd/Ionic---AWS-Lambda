@@ -11,4 +11,41 @@
 
 <ion-content padding>
 
+    <ion-card>
+        <ion-card-header> Add a new Product</ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                <ion-label color="info" floating>Product ID:</ion-label>
+                <ion-input type="text" value="" [(ngModel)]="productInput.productID" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label color="info" floating>Product Name:</ion-label>
+                <ion-input type="text" value="" [(ngModel)]="productInput.productName" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label color="info" floating>Category:</ion-label>
+                <ion-input type="text" value="" [(ngModel)]="productInput.category" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label color="info" floating>Price:</ion-label>
+                <ion-input type="number" value="" [(ngModel)]="productInput.price" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label color="info" floating>Quantity:</ion-label>
+                <ion-input type="number" value="" [(ngModel)]="productInput.quantity" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label color="info" floating>Model:</ion-label>
+                <ion-input type="text" value="" [(ngModel)]="productInput.model" required></ion-input>
+            </ion-item>
+
+            <button ion-button full color="info" (click)="save()">Save</button>
+        </ion-card-content>
+    </ion-card>
+
 </ion-content>

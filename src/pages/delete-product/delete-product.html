@@ -10,5 +10,16 @@
 
 
 <ion-content padding>
-
+    <h2 padding>Delete an Existing Product</h2>
+    <ion-row>
+        <ion-col width-80>
+            <ion-item>
+                <ion-label color="info">Product ID</ion-label>
+                <ion-input type="text" value="" [(ngModel)]="productId" required></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col width-20>
+            <button padding center text-center ion-button color="info" (click)="delete()"><ion-icon name="trash"></ion-icon></button>
+        </ion-col>
+    </ion-row>
 </ion-content>

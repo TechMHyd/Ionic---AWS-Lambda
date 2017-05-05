@@ -3,7 +3,7 @@ import { Platform,Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { LoginPage,AllProductsPage,AppHomePage,DeleteProductPage,SaveNewProductPage,SearchProductPage,UpdateProductPage } from '../pages/pages.export';
+import { LoginPage,AllProductsPage,AppHomePage,DeleteProductPage,SaveNewProductPage,SearchProductPage } from '../pages/pages.export';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,6 +12,8 @@ import { LoginPage,AllProductsPage,AppHomePage,DeleteProductPage,SaveNewProductP
 export class MyApp {
   rootPage:any = LoginPage;
   @ViewChild(Nav) nav: Nav;
+  userRole:any;
+  username:any;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -19,6 +21,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      this.userRole = localStorage.getItem("userRole");
+      this.username = localStorage.getItem("username");
+      console.log("this.userRole-PR"+this.userRole);
     });
   }
 
@@ -34,10 +39,6 @@ export class MyApp {
     this.nav.push(SaveNewProductPage);
   }
 
-  goToUpdate(){
-    this.nav.push(UpdateProductPage);
-  }
-
   goToSearch(){
     this.nav.push(SearchProductPage);
   }
@@ -47,6 +48,13 @@ export class MyApp {
   }
 
   logOut(){
+    localStorage.removeItem("CognitoIdentityServiceProvider.493o3rsbregssd2vj7iuvbcqje.LastAuthUser");
+    localStorage.removeItem("CognitoIdentityServiceProvider.493o3rsbregssd2vj7iuvbcqje.agnimitra.accessToken");
+    localStorage.removeItem("CognitoIdentityServiceProvider.493o3rsbregssd2vj7iuvbcqje.agnimitra.idToken");
+    localStorage.removeItem("CognitoIdentityServiceProvider.493o3rsbregssd2vj7iuvbcqje.agnimitra.refreshToken");
+    localStorage.removeItem("userRole");
+    localStorage.removeItem("username");
+    localStorage.removeItem("tokenId");
     this.nav.push(LoginPage);
   }
 }

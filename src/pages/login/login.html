@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar color="info">
+    <ion-navbar hideBackButton="true" color="info">
         <ion-title>
             AWS Demo
         </ion-title>
@@ -25,7 +25,7 @@
                         <h2 class="error-box" *ngIf="authForm.controls['username'].hasError('required') && authForm.controls['username'].touched">* username is required!</h2>
 
                         <ion-item>
-                            <ion-label color="info">Password:</ion-label>
+                            <ion-label color="info" floating>Password:</ion-label>
                             <ion-input type="password" [formControl]="authForm.controls['password']" [(ngModel)]="login.password" required></ion-input>
                         </ion-item>
 

@@ -9,8 +9,8 @@ import AWS from 'aws-sdk';
   templateUrl: 'register.html'
 })
 export class RegisterPage {
-    verificationCode: any;
-    verificationNo: any;
+  
+  verificationCode: any;
 
   signUpForm={
     email:'',
@@ -76,8 +76,7 @@ cognito_config= {
 		})
 
  ionViewWillEnter() {
-   console.log("this.presentPrompt()"+this.presentPrompt());
-  this.cognito_config.poolData.UserPoolId = this.aws_config.userPoolId;
+   this.cognito_config.poolData.UserPoolId = this.aws_config.userPoolId;
    this.cognito_config.poolData.ClientId = this.aws_config.appClientId;
    
    var userPool = new CognitoUserPool(this.cognito_config.poolData);
@@ -119,8 +118,7 @@ cognito_config= {
 						            }
 						            
 						           var cognitoUser = result.user;
-                       this.presentPrompt(cognitoUser);
-						           var verificationCode= prompt('Please provide verification code sent to Registered Email: ' ,'');
+                       var verificationCode= prompt('Please provide verification code sent to Registered Email: ' ,'');
 						            cognitoUser.confirmRegistration(verificationCode, true, function(err, result) {
 						                if (err) {
 						                   alert(err);
@@ -131,41 +129,5 @@ cognito_config= {
 						        });
  }
 
-presentPrompt(cognitoUser) {
-  let alert = this.alertCtrl.create({
-    title: 'Please enter the varification code from mail',
-    inputs: [
-      {
-        name: 'verificationCode',
-        placeholder: 'Verification Code'
-      }
-    ],
-    buttons: [
-      {
-        text: 'Cancel',
-        role: 'cancel',
-        handler: data => {
-          console.log('Cancel clicked');
-        }
-      },
-      {
-        text: 'Verify',
-        handler: data => {
-           
-        }
-      }
-    ]
-  });
-  alert.present();
-  
-}
 
-presentAlert(title,subTitle) {
-  let alert = this.alertCtrl.create({
-    title: title,
-    subTitle: subTitle,
-    buttons: ['Dismiss']
-  });
-  alert.present();
-}
 }

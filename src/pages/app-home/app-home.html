@@ -10,4 +10,9 @@
 
 
 <ion-content>
+    <img src="https://webcube-general.s3.amazonaws.com/cuker/media/blog/2015/12/31/Cuker_Blog_AWS_Thumbnail-6-display_1.jpg">
+    <button ion-button outline round padding color="info" *ngIf="userRole == 'admin'" (click)="showAll()">Show All</button>
+    <button ion-button outline round padding color="info" (click)="addNew()">Add New</button>
+    <button ion-button outline round padding color="info" (click)="search()">Search</button>
+    <button ion-button outline round padding color="info" *ngIf="userRole == 'admin'" (click)="delete()">Delete</button>
 </ion-content>

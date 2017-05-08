@@ -46,8 +46,7 @@ export class SearchProductPage {
             content: "Loading..."
     });
     loader.present().then(() =>{
-      let prodId = this.modifyString(this.productId);
-      this._searchService.doSearch(prodId)
+      this._searchService.doSearch(this.productId)
                         .subscribe(data =>{
                             this.productDetails = JSON.parse(data._body).items;
                             if(this.productDetails.length === 0){

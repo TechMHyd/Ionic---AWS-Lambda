@@ -18,7 +18,6 @@ export class SearchService {
         let options  = new RequestOptions({ headers: headers }); 
         return this._http.post(this.baseUrl+api,productID,options)
                          .map((response:Response)=>{
-                             console.log(response.json());
                              return response;
                          })
     }
